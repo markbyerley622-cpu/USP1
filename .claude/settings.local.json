@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:pennyonsol.fun)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

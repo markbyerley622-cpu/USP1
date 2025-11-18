@@ -56,14 +56,30 @@ function playSound(type) {
                 break;
 
             case 'coin':
-                // Metallic coin sound
-                oscillator.type = 'triangle';
-                oscillator.frequency.value = 1500;
-                oscillator.frequency.exponentialRampToValueAtTime(800, audioContext.currentTime + 0.1);
-                gainNode.gain.setValueAtTime(0.08, audioContext.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+                // Cha-ching cash register sound
+                oscillator.type = 'sine';
+
+                // First "cha" - higher pitch
+                oscillator.frequency.value = 1200;
+                oscillator.frequency.exponentialRampToValueAtTime(800, audioContext.currentTime + 0.05);
+                gainNode.gain.setValueAtTime(0.15, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
                 oscillator.start(audioContext.currentTime);
-                oscillator.stop(audioContext.currentTime + 0.3);
+                oscillator.stop(audioContext.currentTime + 0.1);
+
+                // Second "ching" - bell-like sustain
+                const oscillator2 = audioContext.createOscillator();
+                const gainNode2 = audioContext.createGain();
+                oscillator2.connect(gainNode2);
+                gainNode2.connect(audioContext.destination);
+
+                oscillator2.type = 'sine';
+                oscillator2.frequency.value = 1800;
+                gainNode2.gain.setValueAtTime(0, audioContext.currentTime + 0.05);
+                gainNode2.gain.linearRampToValueAtTime(0.2, audioContext.currentTime + 0.08);
+                gainNode2.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+                oscillator2.start(audioContext.currentTime + 0.05);
+                oscillator2.stop(audioContext.currentTime + 0.5);
                 break;
         }
     } catch (e) {
@@ -73,66 +89,6 @@ function playSound(type) {
 
 // Make playSound globally available
 window.playSound = playSound;
-
-// ============================================
-// CUSTOM CURSOR
-// ============================================
-const cursor = document.getElementById('custom-cursor');
-const cursorTrail = document.getElementById('cursor-trail');
-let mouseX = 0;
-let mouseY = 0;
-let cursorX = 0;
-let cursorY = 0;
-let trailX = 0;
-let trailY = 0;
-
-// Track mouse movement
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-});
-
-// Smooth cursor animation
-function animateCursor() {
-    // Smooth following for main cursor
-    cursorX += (mouseX - cursorX) * 0.2;
-    cursorY += (mouseY - cursorY) * 0.2;
-
-    // Even smoother for trail
-    trailX += (mouseX - trailX) * 0.1;
-    trailY += (mouseY - trailY) * 0.1;
-
-    cursor.style.left = cursorX + 'px';
-    cursor.style.top = cursorY + 'px';
-
-    cursorTrail.style.left = trailX + 'px';
-    cursorTrail.style.top = trailY + 'px';
-
-    requestAnimationFrame(animateCursor);
-}
-
-animateCursor();
-
-// Cursor hover effects
-document.querySelectorAll('a, button, .btn').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        cursor.style.width = '50px';
-        cursor.style.height = '50px';
-        cursor.style.borderColor = '#F5A623';
-        cursor.style.borderWidth = '3px';
-        cursorTrail.style.width = '15px';
-        cursorTrail.style.height = '15px';
-    });
-
-    el.addEventListener('mouseleave', () => {
-        cursor.style.width = '30px';
-        cursor.style.height = '30px';
-        cursor.style.borderColor = '#E9A55B';
-        cursor.style.borderWidth = '2px';
-        cursorTrail.style.width = '8px';
-        cursorTrail.style.height = '8px';
-    });
-});
 
 // ============================================
 // FALLING PENNIES ANIMATION
@@ -178,7 +134,7 @@ class Penny {
         this.speedX = (Math.random() - 0.5) * 0.8; // Slight horizontal drift
         this.rotation = Math.random() * Math.PI * 2;
         this.rotationSpeed = (Math.random() - 0.5) * 0.04;
-        this.opacity = Math.random() * 0.4 + 0.2; // 0.2-0.6 opacity
+        this.opacity = Math.random() * 0.25 + 0.15; // 0.15-0.4 opacity (lighter for white bg)
         this.wobble = Math.random() * Math.PI * 2;
         this.wobbleSpeed = Math.random() * 0.03 + 0.01;
     }
@@ -302,7 +258,7 @@ document.addEventListener('click', (e) => {
     for (let i = 0; i < 8; i++) {
         burstPennies.push(new BurstPenny(e.clientX, e.clientY));
     }
-    playSound('coin');
+    // Sound is only played when clicking the spinning coin
 });
 
 // Update burst pennies in animation loop
@@ -417,20 +373,6 @@ function animateFull() {
 
 // Start full animation
 animateFull();
-
-// ============================================
-// PARALLAX EFFECT ON SCROLL
-// ============================================
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.collage-image');
-
-    parallaxElements.forEach((el, index) => {
-        const speed = 0.5 + (index * 0.2);
-        const yPos = -(scrolled * speed / 10);
-        el.style.transform = `translateY(${yPos}px)`;
-    });
-});
 
 // ============================================
 // GLOWING BUTTON EFFECT
