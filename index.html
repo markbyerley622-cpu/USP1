@@ -21,12 +21,12 @@
 
         /* CSS Variables - Bright Cartoony Color Palette */
         :root {
-            --copper: #C87533;
-            --copper-light: #E9A55B;
-            --copper-dark: #9A5A2B;
-            --gold: #F5A623;
-            --bronze: #CD7F32;
-            --orange: #FF8C42;
+            --copper: #dc6303;
+            --copper-light: #ed8c02;
+            --copper-dark: #ff500d;
+            --gold: #ed8c02;
+            --bronze: #dc6303;
+            --orange: #ff500d;
             --bg-white: #FFFFFF;
             --bg-cream: #FFF9F0;
             --bg-light: #FFF5E6;
@@ -206,11 +206,14 @@
         }
 
         .ca-label {
-            font-weight: 700;
-            color: #000;
+            font-weight: 800;
+            color: #fff;
             font-size: 1rem;
-            font-family: 'Permanent Marker', 'Baloo 2', cursive;
+            font-family: 'Baloo 2', 'Fredoka', cursive;
             letter-spacing: 1px;
+            -webkit-text-stroke: 2px #000;
+            text-stroke: 2px #000;
+            paint-order: stroke fill;
         }
 
         .ca-address {
@@ -234,23 +237,26 @@
 
         .copy-btn {
             background: var(--gold);
-            color: #000;
+            color: #fff;
             border: 3px solid #000;
             padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-weight: 700;
+            border-radius: 8px;
+            font-weight: 800;
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 0.9rem;
-            box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.6);
-            font-family: 'Permanent Marker', 'Baloo 2', cursive;
+            box-shadow: 3px 3px 0 #000;
+            font-family: 'Baloo 2', 'Fredoka', cursive;
             letter-spacing: 1px;
+            -webkit-text-stroke: 1.5px #000;
+            text-stroke: 1.5px #000;
+            paint-order: stroke fill;
         }
 
         .copy-btn:hover {
             background: var(--orange);
             transform: translateY(-2px);
-            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.6);
+            box-shadow: 4px 4px 0 #000;
         }
 
         /* Header */
@@ -272,25 +278,28 @@
         }
 
         .logo {
-            font-family: 'Permanent Marker', 'Baloo 2', cursive;
+            font-family: 'Baloo 2', 'Fredoka', cursive;
             font-size: 1.4rem;
-            font-weight: 400;
-            color: #000;
+            font-weight: 800;
+            color: #fff;
             background: var(--bronze);
             text-decoration: none;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             line-height: 1.2;
-            padding: 0.5rem 1.2rem;
-            border: 3px solid #000;
-            border-radius: 8px;
-            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.6), 8px 8px 0 rgba(205, 127, 50, 0.3);
+            padding: 0.6rem 1.5rem;
+            border: 4px solid #000;
+            border-radius: 12px;
+            box-shadow: 4px 4px 0 #000, 8px 8px 0 rgba(220, 99, 3, 0.5);
             transform: rotate(-2deg);
             transition: all 0.3s ease;
+            -webkit-text-stroke: 2px #000;
+            text-stroke: 2px #000;
+            paint-order: stroke fill;
         }
 
         .logo:hover {
             transform: rotate(-2deg) translateY(-3px);
-            box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.6), 10px 10px 0 rgba(205, 127, 50, 0.3);
+            box-shadow: 6px 6px 0 #000, 10px 10px 0 rgba(220, 99, 3, 0.5);
         }
 
         .header-actions {
@@ -301,26 +310,29 @@
 
         .follow-x-btn {
             background: var(--gold);
-            color: #000;
-            padding: 0.5rem 1.2rem;
-            border-radius: 8px;
+            color: #fff;
+            padding: 0.6rem 1.5rem;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 0.95rem;
+            font-weight: 800;
+            font-size: 1rem;
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            font-family: 'Permanent Marker', 'Baloo 2', cursive;
-            border: 3px solid #000;
-            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.6), 8px 8px 0 rgba(245, 166, 35, 0.3);
+            font-family: 'Baloo 2', 'Fredoka', cursive;
+            border: 4px solid #000;
+            box-shadow: 4px 4px 0 #000, 8px 8px 0 rgba(237, 140, 2, 0.5);
             transform: rotate(1deg);
             letter-spacing: 1px;
+            -webkit-text-stroke: 2px #000;
+            text-stroke: 2px #000;
+            paint-order: stroke fill;
         }
 
         .follow-x-btn:hover {
             transform: rotate(1deg) translateY(-3px);
-            box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.6), 10px 10px 0 rgba(245, 166, 35, 0.3);
+            box-shadow: 6px 6px 0 #000, 10px 10px 0 rgba(237, 140, 2, 0.5);
         }
 
         .launch-app-btn {
@@ -349,44 +361,53 @@
         }
 
         nav a {
-            color: #000;
+            color: #fff;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 800;
             transition: all 0.3s ease;
             position: relative;
             font-size: 1rem;
-            font-family: 'Permanent Marker', 'Baloo 2', cursive;
+            font-family: 'Baloo 2', 'Fredoka', cursive;
             letter-spacing: 1px;
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            background: var(--copper);
+            border: 3px solid #000;
+            box-shadow: 3px 3px 0 #000;
+            -webkit-text-stroke: 1.5px #000;
+            text-stroke: 1.5px #000;
+            paint-order: stroke fill;
         }
 
         nav a:hover {
-            color: var(--copper);
-            background: rgba(205, 127, 50, 0.1);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 4px 4px 0 #000;
+            background: var(--orange);
         }
 
         .mobile-menu-toggle {
             display: none;
             background: var(--bronze);
-            border: 3px solid #000;
-            color: #000;
+            border: 4px solid #000;
+            color: #fff;
             font-size: 1.3rem;
             cursor: pointer;
-            font-weight: 700;
-            padding: 0.3rem 0.6rem;
-            border-radius: 6px;
-            box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.6);
-            font-family: 'Permanent Marker', cursive;
+            font-weight: 800;
+            padding: 0.4rem 0.8rem;
+            border-radius: 10px;
+            box-shadow: 4px 4px 0 #000;
+            font-family: 'Baloo 2', 'Fredoka', cursive;
+            -webkit-text-stroke: 2px #000;
+            text-stroke: 2px #000;
+            paint-order: stroke fill;
         }
 
         /* Hero Section */
         .hero {
-            min-height: 90vh;
+            min-height: 70vh;
             display: flex;
             align-items: center;
-            padding: 8rem 0 4rem 0;
+            padding: 4rem 0 4rem 0;
             position: relative;
             overflow: hidden;
         }
@@ -399,30 +420,47 @@
 
         .hero-headline {
             font-family: 'Baloo 2', 'Fredoka', cursive;
-            font-size: clamp(3.5rem, 8vw, 7rem);
+            font-size: clamp(4rem, 10vw, 8.5rem);
             font-weight: 800;
-            color: var(--copper);
-            text-shadow: 4px 4px 0px var(--gold),
-                         8px 8px 0px var(--orange),
-                         12px 12px 20px var(--shadow);
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            transform: rotate(-2deg);
-            letter-spacing: 2px;
+            color: var(--orange);
+            margin-bottom: 2rem;
+            line-height: 1;
+            transform: rotate(-3deg);
+            letter-spacing: 3px;
+            -webkit-text-stroke: 6px #000;
+            text-stroke: 6px #000;
+            paint-order: stroke fill;
+            filter: drop-shadow(6px 6px 0px #000)
+                    drop-shadow(12px 12px 0px var(--copper))
+                    drop-shadow(18px 18px 0px var(--gold))
+                    drop-shadow(24px 24px 30px rgba(0, 0, 0, 0.5));
+            animation: headlinePulse 3s ease-in-out infinite;
+            text-transform: uppercase;
+        }
+
+        @keyframes headlinePulse {
+            0%, 100% {
+                transform: rotate(-3deg) scale(1);
+            }
+            50% {
+                transform: rotate(-3deg) scale(1.02);
+            }
         }
 
         .hero-subheadline {
             font-family: 'Baloo 2', 'Fredoka', cursive;
             font-size: clamp(2.5rem, 6vw, 5rem);
             font-weight: 800;
-            color: var(--orange);
-            text-shadow: 3px 3px 0px var(--copper),
-                         6px 6px 0px var(--gold),
-                         9px 9px 15px var(--shadow);
+            color: #fff;
             margin-bottom: 3rem;
             line-height: 1.1;
             transform: rotate(1deg);
             letter-spacing: 1px;
+            -webkit-text-stroke: 4px #000;
+            text-stroke: 4px #000;
+            paint-order: stroke fill;
+            filter: drop-shadow(3px 3px 0px var(--orange))
+                    drop-shadow(6px 6px 0px var(--gold));
         }
 
         .hero-text h1 {
@@ -469,29 +507,35 @@
 
         .btn-primary {
             background: linear-gradient(135deg, var(--orange), var(--gold));
-            color: var(--white);
-            box-shadow: 5px 5px 0px var(--copper), 10px 10px 20px var(--shadow);
+            color: #fff;
+            box-shadow: 5px 5px 0px #000, 10px 10px 0px rgba(220, 99, 3, 0.5);
             position: relative;
-            border: 3px solid var(--copper-dark);
+            border: 4px solid #000;
+            -webkit-text-stroke: 2px #000;
+            text-stroke: 2px #000;
+            paint-order: stroke fill;
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 7px 7px 0px var(--copper), 14px 14px 25px var(--shadow);
+            box-shadow: 7px 7px 0px #000, 14px 14px 0px rgba(220, 99, 3, 0.5);
         }
 
         .btn-secondary {
             background: var(--white);
             color: var(--copper);
-            border: 3px solid var(--copper);
-            box-shadow: 5px 5px 0px var(--gold), 10px 10px 20px var(--shadow);
+            border: 4px solid #000;
+            box-shadow: 5px 5px 0px #000, 10px 10px 0px rgba(237, 140, 2, 0.5);
+            -webkit-text-stroke: 2px #000;
+            text-stroke: 2px #000;
+            paint-order: stroke fill;
         }
 
         .btn-secondary:hover {
             background: var(--copper);
-            color: var(--white);
+            color: #fff;
             transform: translateY(-3px);
-            box-shadow: 7px 7px 0px var(--gold), 14px 14px 25px var(--shadow);
+            box-shadow: 7px 7px 0px #000, 14px 14px 0px rgba(237, 140, 2, 0.5);
         }
 
         /* Hero Images - Hidden */
@@ -506,14 +550,17 @@
 
         .section-title {
             text-align: center;
-            color: var(--copper);
+            color: #fff;
             margin-bottom: 3rem;
             font-family: 'Baloo 2', 'Fredoka', cursive;
             font-weight: 800;
             font-size: clamp(2.5rem, 5vw, 4.5rem);
-            text-shadow: 3px 3px 0px var(--gold),
-                         6px 6px 15px var(--shadow);
             letter-spacing: 2px;
+            -webkit-text-stroke: 3px #000;
+            text-stroke: 3px #000;
+            paint-order: stroke fill;
+            filter: drop-shadow(3px 3px 0px var(--copper))
+                    drop-shadow(6px 6px 0px var(--gold));
         }
 
         /* What is USP1 Section */
@@ -547,11 +594,15 @@
         }
 
         .bullet-card h3 {
-            color: var(--copper);
+            color: #fff;
             margin-bottom: 1rem;
             font-family: 'Baloo 2', 'Fredoka', cursive;
             font-weight: 700;
             font-size: 1.8rem;
+            -webkit-text-stroke: 2px #000;
+            text-stroke: 2px #000;
+            paint-order: stroke fill;
+            filter: drop-shadow(2px 2px 0px var(--copper));
         }
 
         .bullet-card p {
@@ -665,7 +716,7 @@
             top: 10%;
             right: 5%;
             background: #fff;
-            color: #000;
+            color: #fff;
             padding: 0.8rem 1.5rem;
             border-radius: 20px;
             border: 4px solid #000;
@@ -674,8 +725,11 @@
             font-size: 1.2rem;
             text-transform: uppercase;
             z-index: 4;
-            box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+            box-shadow: 4px 4px 0 #000;
             animation: bubble-pop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            -webkit-text-stroke: 2px #000;
+            text-stroke: 2px #000;
+            paint-order: stroke fill;
         }
 
         .speech-bubble::after {
@@ -736,18 +790,21 @@
             top: 5%;
             left: 50%;
             transform: translateX(-50%);
-            background: #FFD700;
-            color: #000;
+            background: var(--gold);
+            color: #fff;
             padding: 0.5rem 2rem;
             font-family: 'Baloo 2', 'Fredoka', cursive;
             font-weight: 800;
             font-size: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            border: 3px solid #000;
-            box-shadow: 3px 3px 0 rgba(0,0,0,0.5);
+            border: 4px solid #000;
+            box-shadow: 4px 4px 0 #000;
             z-index: 4;
             white-space: nowrap;
+            -webkit-text-stroke: 2px #000;
+            text-stroke: 2px #000;
+            paint-order: stroke fill;
         }
 
         /* Sound Effects */
@@ -759,18 +816,16 @@
             font-family: 'Baloo 2', 'Fredoka', cursive;
             font-weight: 800;
             font-size: 3rem;
-            color: #FF6B35;
-            text-shadow:
-                -3px -3px 0 #000,
-                3px -3px 0 #000,
-                -3px 3px 0 #000,
-                3px 3px 0 #000,
-                0 0 20px rgba(255, 107, 53, 0.5);
+            color: #fff;
             text-transform: uppercase;
             letter-spacing: 3px;
             z-index: 4;
             animation: sound-pulse 1s ease-in-out infinite;
             pointer-events: none;
+            -webkit-text-stroke: 4px #000;
+            text-stroke: 4px #000;
+            paint-order: stroke fill;
+            filter: drop-shadow(4px 4px 0px var(--orange));
         }
 
         @keyframes sound-pulse {
@@ -931,17 +986,21 @@
             font-family: 'Baloo 2', 'Fredoka', cursive;
             font-size: 1.75rem;
             font-weight: 800;
-            color: var(--white);
-            border: 4px solid var(--copper-dark);
-            box-shadow: 3px 3px 0px var(--copper), 6px 6px 15px var(--shadow);
+            color: #fff;
+            border: 4px solid #000;
+            box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6), 6px 6px 15px var(--shadow);
         }
 
         .step-card h3 {
             margin-top: 1rem;
-            color: var(--copper);
+            color: #fff;
             font-family: 'Baloo 2', 'Fredoka', cursive;
             font-weight: 700;
             font-size: 1.6rem;
+            -webkit-text-stroke: 2px #000;
+            text-stroke: 2px #000;
+            paint-order: stroke fill;
+            filter: drop-shadow(2px 2px 0px var(--orange));
         }
 
         .step-card p {
@@ -1312,11 +1371,23 @@
              HERO SECTION
              Uses: penny 1.png, penny 2.png, penny 3.png
              ============================================ -->
+        <!-- ============================================
+             SPINNING COIN SECTION
+             ============================================ -->
+        <section style="background: var(--bg-white); padding: 2rem 0;">
+            <div class="container">
+                <!-- Spinning Coin -->
+                <div class="spinning-coin-container" id="spinningCoinContainer">
+                    <img src="usp_1-removebg-preview.png" alt="USP1 Coin" class="spinning-coin" id="spinningCoin">
+                </div>
+            </div>
+        </section>
+
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-headline">America has gotten rid of The penny</h1>
-                    <h2 class="hero-subheadline">We have brought it on chain introducing USP1</h2>
+                    <h1 class="hero-headline">America has gotten rid of The penny!!!</h1>
+                    <h2 class="hero-subheadline">introducing USP1</h2>
 
                     <div class="hero-text">
                         <div class="cta-buttons">
@@ -1335,18 +1406,6 @@
             <div class="container">
                 <h2 class="section-title" style="margin-bottom: 0; transform: rotate(-1deg);">Does the penny have any use cases?</h2>
                 <p style="text-align: center; font-size: 1.5rem; margin-top: 1rem; color: var(--text-brown); font-weight: 600;">we are about to find out .....</p>
-            </div>
-        </section>
-
-        <!-- ============================================
-             SPINNING COIN SECTION
-             ============================================ -->
-        <section style="background: var(--bg-white); padding: 2rem 0;">
-            <div class="container">
-                <!-- Spinning Coin -->
-                <div class="spinning-coin-container" id="spinningCoinContainer">
-                    <img src="usp_1-removebg-preview.png" alt="USP1 Coin" class="spinning-coin" id="spinningCoin">
-                </div>
             </div>
         </section>
 
