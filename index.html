@@ -260,6 +260,27 @@
             box-shadow: 0 6px 25px rgba(245, 166, 35, 0.5);
         }
 
+        .launch-app-btn {
+            background: var(--orange);
+            color: var(--white);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .launch-app-btn:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 25px rgba(255, 140, 66, 0.5);
+            background: #ff7a2e;
+        }
+
         nav ul {
             display: flex;
             gap: 2rem;
@@ -1226,6 +1247,9 @@
             <div class="header-content">
                 <a href="#" class="logo">United States Penny 1</a>
                 <div class="header-actions">
+                    <a href="comingsoon.html" class="launch-app-btn">
+                        🚀 Launch App
+                    </a>
                     <a href="https://x.com/usp1onbonk?s=21" target="_blank" class="follow-x-btn" id="followBtn">
                         <span>𝕏</span> Follow Us
                     </a>
